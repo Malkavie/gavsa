@@ -1,0 +1,502 @@
+/* CSS RESET */
+* {
+    box-sizing: border-box;
+    position: relative;
+    border: 0;
+    outline: 0;
+    z-index: 1;
+}
+html,body {
+    width: 100%;
+    height: 100%;
+    margin: 0; 
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: silver;
+    background: dimgray;
+}
+body {
+    overflow: hidden;
+}
+a,strong,em,b,i,small,table,tr,th,td,ul,ol,div,span,form,svg {
+    margin: 0;
+    padding: 0;
+}
+ul,ol {
+    list-style: none;
+}
+p,label,li,h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    padding: 0.25rem 0.5rem;
+}
+a {
+    color: steelblue;
+    text-decoration: none;
+    font-weight: 400;
+}
+a:hover {
+    color: lightsteelblue;
+    text-decoration: underline;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+}
+span {
+    display: inline-block;
+    vertical-align: middle;
+}
+hr {
+    display: block;
+    margin: 5px;
+    padding: 0;
+}
+input,select,textarea,button {
+    width: auto;
+    height: auto;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: gray;
+    border: 1px solid lightsteelblue;
+    border-radius: 5px;
+}
+input,select,textarea {
+    background: ghostwhite;
+}
+textarea {
+    font-family: 'Roboto', sans-serif;
+}
+input:focus,select:focus,textarea:focus {
+    border: 1px solid steelblue;
+    box-shadow: 1px 1px navy, 1px 1px 5px dodgerblue;
+}
+button {
+    cursor: pointer;
+    background: lavender;
+}
+button:hover {
+    color: #FFF8E7; /* Cosmic Latte */
+    background: steelblue;
+    border: 1px solid steelblue;
+    box-shadow: 1px 1px navy, 1px 1px 5px dodgerblue;
+}
+button:disabled {
+    color: lightsteelblue;
+    background: gainsboro;
+    border: 1px solid lightslategray;
+    cursor: not-allowed;
+}
+h1 { font-size: 2.2rem; font-weight:500; }
+h2 { font-size: 2.0rem; font-weight:500; }
+h3 { font-size: 1.8rem; font-weight:500; }
+h4 { font-size: 1.6rem; font-weight:500; }
+h5 { font-size: 1.4rem; font-weight:500; }
+h6 { font-size: 1.2rem; font-weight:500; }
+small { font-size: 0.6rem; }
+
+/* RESPONSIVE TYPOGRAPHY */
+@media only screen and (max-width: 450px) {
+    html { font-size: 14px; }
+}
+@media only screen and (min-width: 451px) and (max-width: 1500px) {
+    html { font-size: calc( 14px + (20 - 14) * ( (100vw - 500px) / ( 1500 - 450) )); }
+}
+@media only screen and (min-width: 1501px) {
+    html { font-size: 20px; }
+}
+
+/* ICON FONTS */
+ @font-face {
+    font-family: 'DevIcons';
+    font-style: normal;
+    font-weight: normal;
+    src: url(../font/devicon.eot); /* For IE6-8 */
+    src: local('DevIcons'),
+    local('dev-icons'),
+    url(../font/devicon.woff2) format('woff2'),
+    url(../font/devicon.woff) format('woff'),
+    url(../font/devicon.ttf) format('truetype');
+}
+*.devicon {
+    font-family: 'DevIcons';
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    vertical-align: middle;
+    text-transform: none;
+    text-decoration: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: normal;
+    src: url(../font/material.eot); /* For IE6-8 */
+    src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(../font/material.woff2) format('woff2'),
+    url(../font/material.woff) format('woff'),
+    url(../font/material.ttf) format('truetype');
+}
+*.maticon {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    vertical-align: middle;
+    text-transform: none;
+    text-decoration: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+/* HELPERS */
+.alg_txtcenter { text-align: center; }
+.alg_txtleft { text-align: left; }
+.alg_txtright { text-align: right; }
+.alg_txtjustify { text-align: justify; }
+
+.alt_font {font-family: 'Ubuntu', sans-serif;}
+
+.col_royalblue { color: royalblue; };
+
+.dis_none {display: none;}
+
+.fnt_w100 { font-weight: 100; }
+.fnt_w300 { font-weight: 300; }
+.fnt_w400 { font-weight: 400; }
+.fnt_w700 { font-weight: 700; }
+.fnt_w900 { font-weight: 900; }
+
+.txt_06 { font-size: 0.6rem; }
+.txt_08 { font-size: 0.8rem; }
+.txt_1 { font-size: 1rem; }
+.txt_12 { font-size: 1.2rem; }
+.txt_14 { font-size: 1.4rem; }
+.txt_16 { font-size: 1.6rem; }
+.txt_18 { font-size: 1.8rem; }
+.txt_2 { font-size: 2rem; }
+.txt_25 { font-size: 2.5rem; }
+.txt_3 { font-size: 3rem; }
+
+.va_top { vertical-align: top; }
+.va_middle { vertical-align: middle; }
+.va_bottom { vertical-align: bottom; }
+
+/* TOP MENU */
+nav {
+    width: 100%;
+    height: 3rem;
+    background: white;
+    box-shadow: 0 0 1rem black;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+nav > span {
+    width: calc(50% - 5px);
+    height: 100%;
+    padding: 0.25rem 0.5rem;
+    font-size: 2rem;
+}
+nav > span > b {
+    color: midnightblue;
+    font-weight: 600;
+}
+nav > ul {
+    width: calc(50% - 5px);
+    height: auto;
+    font-size: 1rem;
+    text-align: right;
+    display: inline-block;
+    vertical-align: middle;
+}
+nav > ul > li {
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* HOME */
+section#home {
+    width: 100%;
+    height: 100%;
+    padding-top: 3rem;
+    overflow: hidden;
+}
+section#home > div {
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 50rem black;
+}
+section#home > div#proyecto {
+    background: lightblue url("../_img/bgd_proyecto.jpg") no-repeat center;
+    background-size: cover;
+}
+section#home > div#proyecto > div.name {
+    width: 70%;
+    height: 10rem;
+    padding: 1.5rem;
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    top: calc(50% - 5rem);
+    left: calc(50% - 35%);
+}
+section#home > div#proyecto > div.name > p {
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center;
+}
+section#home > div#proyecto > div.name > p.title {
+    color: steelblue;
+    text-shadow: 0 0 0.5rem black;
+    letter-spacing: 1rem;
+}
+section#home > div#proyecto > div.name > p.subtitle {
+    text-shadow: 0 0 0.25rem black;
+    letter-spacing: 0.5rem;
+}
+section#home > div#proyecto > div.name > hr {
+    border: 1px solid silver;
+}
+section#home > div#obra {
+    margin-left: -5px;
+    background: lightblue url("../_img/bgd_obra.jpg") no-repeat center;
+    background-size: cover;
+}
+section#home > div#supervision {
+    margin-left: -5px;
+    background: lightblue url("../_img/bgd_supervision.jpg") no-repeat center;
+    background-size: cover;
+}
+
+/* INSERT */
+div.insert {
+    width: 100%;
+    height: 2rem;
+    background: black;
+    box-shadow: 0 0 2rem black;
+}
+
+/* PERFIL */
+section#perfil {
+    width: 100%;
+    height: 100%;
+    padding-top: 3rem;
+    background: black url("../_img/bgd_background.png") no-repeat center;
+    background-size: cover;
+    box-shadow: inset 0 0 50rem black;
+}
+section#perfil > div {
+    width: 90%;
+    height: 50%;
+    margin: auto;
+    padding: 1rem;
+    background: rgba(0,0,0,0.75)
+}
+section#perfil > div > img {
+    width: 30%;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem steelblue;
+}
+section#perfil > div > span {
+    width: 70%;
+    height: auto;
+    margin-left: -5px;
+    padding: 1rem;
+}
+
+/* PROYECTOS */
+section#proyectos {
+    width: 100%;
+    height: 100%;
+    padding-top: 3rem;
+    background: black url("../_img/bgd_background.png") no-repeat center;
+    box-shadow: inset 0 0 15rem black;
+    background-size: cover;
+}
+section#proyectos > div {
+    width: 90%;
+    height: 100%;;
+    margin: auto;
+    padding: 1rem;
+    background: rgba(0,0,0,0.75)
+}
+section#proyectos > div > div.gallery {
+    width: 100%;
+    height: 80%;
+    padding: 1rem;
+}
+section#proyectos > div > div.gallery > div.item {
+    width: calc(50% - 5px);
+    height: 100%;
+    border-radius: 1rem;
+    border: 1px solid royalblue;
+    display: inline-block;
+    overflow: hidden;
+}
+section#proyectos > div > div.gallery > div.item > span.item-name {
+    width: 100%;
+    height: 2rem;
+    padding: 0.2rem 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: white;
+    background: royalblue;
+    display: block;
+}
+section#proyectos > div > div.gallery > div.item > span.item-image {
+    width: 100%;
+    height: 60%;
+    text-align: center;
+    background: black;
+    display: block;
+}
+section#proyectos > div > div.gallery > div.item > span.item-description {
+    width: 100%;
+    height: calc(100% - 60% - 4rem);
+    display: block;
+}
+section#proyectos > div > div.gallery > div.item > span.item-tools {
+    width: 100%;
+    height: 2rem;
+    padding: 0.2rem 1rem;
+    font-size: 0.8rem;
+    text-align: right;
+    display: block;
+}
+
+/* SERVICIOS */
+section#servicios {
+    width: 100%;
+    height: 100%;
+    padding-top: 3rem;
+    background: black url("../_img/bgd_background.png") no-repeat center;
+    box-shadow: inset 0 0 15rem black;
+    background-size: cover;
+}
+section#servicios > div.content {
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    padding: 2rem;
+}
+section#servicios > div.content > div.item {
+    width: 33%;
+    height: 100%;
+    padding: 1rem;
+    background: rgba(0,0,0,0.75);
+    border: 1px solid royalblue;
+    border-radius: 1rem;
+    display: inline-block;
+    vertical-align: top;
+}
+section#servicios > div.content > div.item > p.name {
+    width: 100%;
+    height: auto;
+    font-size: 2rem;
+    color: royalblue;
+    font-weight: 700;
+}
+section#servicios > div.content > div.item > img.image {
+    display: block !important;
+}
+section#servicios > div.content > div.item > p.description {
+    width: 100%;
+    height: auto;
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+section#servicios > div.content > div.item > ul.list {
+    width: 100%;
+    height: auto;
+    list-style-type: square;
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+section#servicios > div.content > div.item > div.details {
+    width: 100%;
+    height: auto;
+    text-align: right;
+}
+
+/* CONTACTO */
+section#contacto {
+    width: 100%;
+    height: 100%;
+    padding-top: 3rem;
+    background: black url("../_img/bgd_background.png") no-repeat center;
+    box-shadow: inset 0 0 15rem black;
+    background-size: cover;
+}
+section#contacto > div.content {
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    padding: 2rem;
+    background: rgba(0,0,0,0.75)
+}
+section#contacto > div.content > div.top{
+    width: 100%
+}
+section#contacto > div.content > div.image{
+    width: 30%;
+    height: 85%;
+    background: black url("../_img/img_contact.jpg") no-repeat center;
+    border-radius: 1rem;
+    box-shadow: inset 0 0 12rem black;
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+}
+section#contacto > div.content > form {
+    width: calc(70% - 1rem);
+    height: 85%;
+    margin-left: 0.5rem;
+    padding: 2rem;
+    border:1px solid white;
+    border-radius: 1rem;
+    display: inline-block;
+    vertical-align: top;
+}
+section#contacto > div.content > form > label {
+    font-size: 0.8rem;
+    display: block;
+}
+section#contacto > div.content > form > input {
+    width: 100%;
+    display: block;
+}
+section#contacto > div.content > form > select {
+    width: 100%;
+    display: block;
+}
+section#contacto > div.content > form > textarea {
+    width: 100%;
+    display: block;
+}
